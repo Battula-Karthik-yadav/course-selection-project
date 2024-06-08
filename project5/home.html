@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KourseKraze</title>
+    <link rel="icon" type="image/x-icon" href="images/xing.png">
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+        }
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1; 
+        }
+        header {
+            padding: 10px;
+        }
+        .topnav {
+            position: relative;
+            overflow: hidden;
+            display: flex; 
+            justify-content: space-between;
+            align-items: center; 
+            padding: 10px;
+        }
+        .topnav img {
+            width: 25px;
+            height: 25px;
+            margin-left: 10px;
+        }
+        .topnav h2 {
+            font-family: Georgia, serif;
+            font-size: x-large;
+            margin: 0;
+        }
+        .topnav-centered {
+            display: flex;
+            flex: 1; 
+            justify-content: center;
+        }
+        .topnav-centered a {
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        .topnav-right {
+            margin-left: auto; 
+        }
+        .topnav a {
+            float: left;
+            color: #000000;
+            text-align: center;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        .topnav a:hover {
+            background-color: #105555;
+            color: rgb(255, 255, 255);
+            border-radius: 8px;
+        }
+        .topnav a.active {
+            background-color: #105555;
+            color: white;
+            border-radius: 8px;
+        }
+        @media screen and (max-width: 600px) {
+            .topnav {
+                padding: 10px 0; 
+            }
+            .topnav img {
+                margin: 10px 0; 
+            }
+            .topnav-centered {
+                position: static;
+                transform: none;
+            }
+            .topnav-centered a {
+                margin: 0 5px; 
+            }
+            .topnav-right {
+                float: none;
+                margin-top: 10px; 
+            }
+            .container3 {
+                font-size: 30px; 
+                margin: 0 auto 20px; 
+            }
+            .container2 {
+                max-width: 90%; 
+            }
+        }
+        .wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px; 
+        }
+        .container {
+            font-size: larger;
+            text-align: center;
+            color: #000000;
+            font-family: Georgia, serif;
+            position: relative; 
+            z-index: 1;
+            margin-bottom: 20px; 
+        }
+        .container2 {
+            max-width: 600px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border: 1px solid #8c8b8b;
+            border-radius: 10px;
+            text-align: center;
+            color: #111010;
+            position: relative; 
+            z-index: 1;
+        }
+        .container3 {
+            max-width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: #111010;
+            position: relative; 
+            z-index: 1;
+            font-size: 50px; 
+        }
+        .container3 img {
+            width: 40px; 
+            height: 40px;
+            margin :0 ;
+        }
+        .container3 h1 {
+            font-family: Georgia, serif;
+            font-size: 30px; 
+            margin-bottom: 30px;
+        }
+        h2 {
+            margin-top: 0;
+        }
+        p {
+            margin: 10px 0;
+        }
+        button {
+            background-color:rgba(0,0, 0, 0.3);
+            color:rgb(1, 1, 1);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #105555;
+        }
+        span ,h1 {
+            display: inline;
+        }
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            border-radius: 8px;
+            padding-top: 60px;
+        }
+
+        .sidebar a {
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+                background-color:#105555;
+                color: rgb(255, 255, 255);
+                border-radius: 8px;
+            }
+        .sidebar img {
+                width: 25px;
+                height: 25px;
+                margin-left: 10px;
+            }
+        .sidebar h1 {
+                font-family: Georgia, serif;
+                font-size: x-large;
+                margin: 0;
+                color: rgb(255, 255, 255);
+                    }
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+            }
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #111;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            }
+        .openbtn:hover {
+            background-color: #368f7a;
+            }
+        .main {
+            transition: margin-right .5s;
+            padding: 16px;
+            }
+        @media screen and (max-height: 450px) {
+            .sidebar {padding-top: 15px;}
+            .sidebar a {font-size: 18px;}
+            }
+        @media screen and (min-width: 900px) {
+            .sidebar {
+                display: none;
+            }
+            .openbtn {
+                display: none;
+            }
+        }
+            
+        @media screen and (max-width: 900px) {
+            .topnav-centered, .topnav-right ,.topnav img ,h2{
+                display: none;
+            }
+            .topnav.responsive .topnav-centered, 
+            .topnav.responsive .topnav-right {
+                display: block;
+            }
+            
+        }
+
+        @media screen and (max-width: 570px) {
+            .topnav a:not(:first-child) {display: none;}
+            .topnav a.icon {
+                float: right;
+                display: block;
+                }
+            }
+        @media screen and (max-width: 570px) {
+            .topnav.responsive {position: relative;}
+            .topnav.responsive .icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="topnav" id="myTopnav">
+            <span> <img src="images/xing.png" alt="Icon"></span> <span><h2>KourseKraze</h2></span> 
+            <div class="topnav-centered">
+                <a href="course.html">Courses</a>
+                <a href="contact.html">Contact</a>
+                <a href="home.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="register.html">Registration</a>
+            </div>
+            <div class="topnav-right">
+                <a href="login.html">Login</a>
+            </div>
+            <button class="openbtn" onclick="openNav()">☰ Menu</button>  
+            <div id="mySidebar" class="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                <span><img src="images/xing.png" alt="Icon"></span><span><h1>KourseKraze</h1></span> 
+                <a href="course.html">course</a>
+                <a href="home.html">Home</a>
+                <a href="contact.html">Contact</a>
+                <a href="about.html">About</a>
+            </div>
+        </div>
+    </header>
+    <div class="main">
+        <video autoplay muted loop id="myVideo">
+            <source src="images/technology-background-loop-video-non-copyright-video.mp4" type="video/mp4">
+          </video>
+        <div class="wrap">
+            <div class="container3">
+                    <span> <img src="images/xing.png" alt="Icon"></span> <span><h1>KourseKraze</h1></span> 
+            </div>
+            <div class="container">
+                    <h2 >Welcome to my free courses</h2>
+                    <p>This courses are available to everyone</p>
+            </div>
+            <section class="container2">
+                    <p>
+                        you don't know about which branch is best sutable for getting job .don't worry click belove and choose best course
+                    </p>
+                    <form>
+                        <button type="submit"onclick="location.href = 'video-player.html';">Click -></button>
+                    </form>
+            </section>
+        </div>
+    </div>
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "220px";
+            document.querySelector(".main").style.marginRight = "220px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.querySelector(".main").style.marginRight= "0";
+        }
+    </script>
+</body> 
+</html>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KourseKraze-Courses</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="icon" type="image/x-icon" href="images/xing.png">  <style>
+    body{
+      background-color: #fbfbfe;
+    }
+    header {
+      padding: 20px;
+    }
+    .topnav {
+      position: relative; 
+      overflow: hidden;
+      display: flex; 
+      justify-content: space-between;
+      align-items: center; 
+      padding: 10px;
+    }
+    .topnav img {
+      width: 25px;
+      height: 25px;
+      margin-left: 10px;
+    }
+    .topnav h1 {
+      font-family: Georgia, serif;
+      font-size: x-large;
+      margin: 0;
+      color: #000000;
+    }
+    .topnav-centered {
+      display: flex; 
+      position: relative;
+      flex: 1; 
+      justify-content: center;
+    }
+    .topnav-centered a {
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    .topnav-right {
+      margin-left: auto; 
+    }
+    .topnav a {
+      float: left;
+      color: #000000;
+      text-align: center;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    .topnav a:hover {
+      background-color:#105555;
+      color: rgb(255, 255, 255);
+      border-radius: 8px;
+    }
+    .topnav a.active {
+      background-color: #105555;
+      color: white;
+      border-radius: 8px;
+    }
+    .topnav .search-container {
+      float: right;
+    }
+    .topnav input[type=text] {
+      padding: 6px;
+      margin-top: 8px;
+      font-size: 17px;
+      border: none;
+      background-color: #2724244c;
+      color: #105555;
+    }
+    .topnav .search-container button {
+      float: right;
+      padding: 6px 10px;
+      margin-top: 8px;
+      margin-right: 16px;
+      background: #ddd;
+      font-size: 17px;
+      border: none;
+      cursor: pointer;
+    }
+    .topnav .search-container button:hover {
+      background: #105555;
+      color: #ffffff;
+    }
+    div.gallery {
+      border: 1px solid #47494951; 
+      box-shadow: #717171;     
+      transition: transform 0.3s;
+      border-radius: 10px;
+      box-shadow: #717171;
+    }
+    div.gallery:hover {
+      transform: scale(1.05);
+      border: 1px solid #105555;
+    }
+    div.gallery img {
+      width: 100%;
+      height: 300px; 
+    }
+    div.desc {
+      padding: 15px;
+      text-align: center;
+      background-color: #105555;
+      color: #ffffff;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    .responsive {
+      padding: 0 6px ;
+      float: left;
+      width: 24.99999%;
+      margin-bottom: 15px;    
+      border-radius: 8px;
+    }
+    .container {
+      padding: 50px;
+    }
+    @media only screen and (max-width: 700px) {
+      .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+      }
+      .container2 {
+        flex-direction: column;
+      }
+
+      .left-content,
+      .right-content {
+        width: 100%;
+      }
+    }
+    @media only screen and (max-width: 500px) {
+      .responsive {
+        width: 100%;
+      }
+    }
+    .clearfix:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .mySlides img{
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+  
+    }
+    .slideshow-container {
+      max-width: 1000px;
+      height: 400px;
+      margin: auto;
+      overflow: hidden;
+      position: relative;
+      background-color: #105555;
+
+    }
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+    .dot {
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+    .active {
+      background-color: #717171;
+    }
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+    @keyframes fade {
+      from {opacity: 0.4} 
+      to {opacity: 1}
+    }
+    @media only screen and (max-width: 300px) {
+      .text {font-size: 11px}
+    }
+    .container2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto;
+      max-width: 92%;
+    }
+
+    .left-content {
+      width: 23%; 
+      padding: 20px 0 20px 0;
+    }
+
+    .right-content {
+      width: 75%;
+    }
+    .container2 img {
+        width: 40px; 
+        height: 40px;
+        margin :0 ;
+    }
+    .container2 h1 {
+        font-family: Georgia, serif;
+        font-size: 35px; 
+        margin-bottom: 30px;
+    }
+    span,h1 {
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+    <div class="topnav">
+        <span> <img src="images/xing.png" alt="Icon"></span> <span><h1>KourseKraze</h1></span> 
+        <div class="topnav-centered">
+          <a href="course.html" class="active">Courses</a>
+          <a href="contact.html">Contact</a>
+          <a href="home.html" >Home</a>
+          <a href="about.html">About</a>
+          <a href="login.html">Login</a>
+          <a href="home.html" >Logout</a>
+        </div>
+        <div class="topnav-right">
+          <div class="search-container">
+            <form id="searchForm">
+                <input type="text" id="searchInput" list="searchList" placeholder="Search.." name="search">
+                <datalist id="searchList">
+                  <option value="Data Science">
+                  <option value="Computer Science">
+                  <option value="Cyber Security">
+                  <option value="Artificial Intelligence">
+                  <option value="Machain Learning">
+                  <option value="Deep Learning">
+                </datalist>
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+          </div>
+        </div>
+    </div>
+</header>
+
+<section>
+  <div class="container2">
+    <div class="left-content">
+        <span> <img src="images/xing.png" alt="Icon"></span> <span><h1>KourseKraze</h1></span> 
+        <h2 style="font-family: Georgia, serif;color: #105555;">Branch Wise All Free Courses Avalloble In My KourseKraze Web</h2>
+    </div>
+    <div class="right-content">
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img  style = "height: 500px; width: 100%;"src="images/pintrest3.jpg">
+          <div class="text">Caption Text</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="images/pintrest2.jpg" style = "height: 500px; width: 100%;">
+          <div class="text">Caption Two</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="images/sample pics (8).webp" style = "height: 500px; width: 100%;">
+          <div class="text">Caption Three</div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+      </div>
+      <div style="text-align:center">
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="sample.html">
+        <img src="images/Creative-Letter-CSE-Logo-Design.jpg" alt="Cinque Terre">
+      </a>
+      <div class="desc">Computer Science</div>
+    </div>
+  </div>
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="img_forest.jpg">
+        <img src="images/sample pics (1).jpg" alt="Forest">
+      </a>
+      <div class="desc">Artificial Intelligence</div>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="datascience.html">
+        <img src="images/sample pics (2).jpeg" alt="Northern Lights">
+      </a>
+      <div class="desc">Data Science</div>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="machinelearnig.html">
+        <img src="images/sample pics (3).jpg" alt="Mountains">
+      </a>
+      <div class="desc">Machine Learning</div>
+    </div>
+  </div>
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="deeplearning.html">
+        <img src="images/sample pics (8).webp" alt="Mountains">
+      </a>
+      <div class="desc">Deep Learning</div>
+    </div>
+  </div>
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="img_mountains.jpg">
+        <img src="images/pintrest5.jpg" alt="Mountains">
+      </a>
+      <div class="desc">Data Analytics</div>
+    </div>
+  </div>
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="img_mountains.jpg">
+        <img src="images/pintrest4.jpg" alt="Mountains">
+      </a>
+      <div class="desc">Data Visualization</div>
+    </div>
+  </div>
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="img_mountains.jpg">
+        <img src="images/sample pics (10).jpg" alt="Mountains">
+      </a>
+      <div class="desc">Syber Security</div>
+    </div>
+  </div>
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="img_mountains.jpg">
+        <img src="images/sample pics (4).jpg" alt="Mountains">
+      </a>
+      <div class="desc"> Electrical & Elecronics Engineering</div>
+    </div>
+  </div>
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="img_mountains.jpg">
+        <img src="images/sample pics (5).webp" alt="Mountains">
+      </a>
+      <div class="desc">Civil Engineering</div>
+    </div>
+  </div>
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="img_mountains.jpg">
+        <img src="images/sample pics (6).jpg" alt="Mountains">
+      </a>
+      <div class="desc">Mechanical Engineer</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); 
+}
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+document.getElementById("searchForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  let searchInput = document.getElementById("searchInput").value.toLowerCase();
+  let galleryItems = document.querySelectorAll(".gallery");
+  for (let i = 0; i < galleryItems.length; i++) {
+    let desc = galleryItems[i].querySelector(".desc").textContent.toLowerCase();
+    if (desc.includes(searchInput)) {
+      galleryItems[i].style.display = "block";
+    } else {
+      galleryItems[i].style.display = "none";
+    }
+  }
+});
+</script>
+
+</body>
+</html>

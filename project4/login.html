@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KourseKraze-Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="images/xing.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image:url("images/sample pics (9).jpg");
+            margin: 0;
+            padding: 0;
+            background-repeat: no-repeat;
+            background-attachment: fixed;  
+            background-size: cover;
+        }
+        header {
+            padding: 10px;
+        }
+        .topnav {
+                position: relative;
+                overflow: hidden;
+                display: flex; 
+                justify-content: space-between;
+                align-items: center; 
+                padding: 10px;
+        }
+
+         .topnav img {
+                width: 25px;
+                height: 25px;
+                margin-left: 10px;
+        }
+
+        .topnav h1 {
+                font-family: Georgia, serif;
+                font-size: x-large;
+                margin: 0;
+                color: #fff;
+        }
+
+        .topnav-centered {
+                display: flex;
+                flex: 1; 
+                justify-content: center;
+        }
+        .topnav-centered a {
+                padding: 10px 20px;
+                text-decoration: none;
+                font-size: 17px;
+        }
+
+        .topnav-right {
+                margin-left: auto; 
+        }
+        .topnav a {
+        float: left;
+        color: #ffffff;
+        text-align: center;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 17px;
+        }
+        .topnav a:hover {
+            background-color:#105555;
+            color: rgb(255, 255, 255);
+            border-radius: 8px;
+        }
+
+        .topnav a.active {
+        background-color: #105555;
+        color: white;
+        border-radius: 8px;
+        }
+
+        .grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .wrap {
+            display: flex;
+            justify-content: left;
+            text-align: left;
+            padding: 90px 0 0 0;
+            width: 720px;
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .login-style{
+            display: flex;
+            justify-content: left;
+            flex-direction: column;
+            text-align: left;
+            padding: 10px;
+            max-width: 720px;
+            width: 720px;
+            height: 120px;
+            margin: o auto;
+            position: relative;
+        }
+        .logo {
+            display: flex;
+            justify-content: left;
+            text-align: left;
+            padding: 10px;
+        }
+        .container {
+            max-width: 300px;
+            padding: 20px;
+            margin: 0 0 100px 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .container2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            position: relative;
+            
+        }
+        .container3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            max-width: 300px;
+            padding: 20px;
+            margin: 0 50px 0 0;
+        }
+        .container-horizontal {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 800px;
+        }
+
+        .footerbox {
+            display: flex;
+            justify-content: center;
+            align-items: left;
+            position: relative;
+            width: 700px;
+            color: #a19f9f;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #050baac9;
+            font-size: 38px;
+            font-family: Georgia, serif;
+        }
+
+        .input-icon {
+            position: relative;
+            color: #fff;
+            font-size: 13px;
+        }
+
+        .input-icon i {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .input-icon input {
+            padding: 10px 0 10px 30px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            margin: 13px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            color: #fff;
+            background-color: rgba(0,0, 0, 0.2);
+        }
+
+        button{
+            background-color: #105555;
+            color: rgb(230, 229, 229);
+            padding: 10px 20px;
+            border: none;
+            width: 100%;
+            margin: 13px 0 0 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #193fc7;
+        }
+
+        p {
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        .vertical-line {
+            border-left: 2px solid #a19f9f;
+            height: 270px;
+            position: absolute;
+            top: 50%;
+            left: calc(50% - 1px); 
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        .or-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid #a19f9f;
+            background-color: #01152f;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: #a19f9f;
+        }
+        span ,h1 {
+            display: inline;
+        }
+        @media  screen and (max-width :700px) {
+        body {
+          background-image: url(images/pintrest1.jpg);
+        }
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="topnav">
+            <span> <img src="images/xing.png" alt="Icon"></span> <span><h1>KourseKraze</h1></span> 
+            <div class="topnav-centered">
+            <a href="course.html">Courses</a>
+            <a href="contact.html">Contact</a>
+            <a href="home.html" >Home</a>
+            <a href="about.html">About</a>
+            <a href="login.html" class="active">Login</a>
+            <a href="register.html">Registration</a>
+            </div>
+            <div class="topnav-right">
+            <a href="home.html">Logout</a>
+            </div>
+        </div>
+    </header>
+    <div class="grid">
+        <div class="wrap">
+            <header class="login-style">
+                <div class="logo">
+                    <span> <img src="images/xing.png" alt="Icon" style="width: 40; height: 40px;"></span> <span><h1 style="font-family: Georgia, serif;font-size: 38px;color: #fcfdff;">KourseKraze</h1></span>
+                </div>
+                <div class="logo">
+                    <h2>login</h2>
+                </div>
+            </header>
+        </div>   
+        <div class="container-horizontal">
+            <div class="container">
+                <button onclick="loginWithGoogle()" class="social-login-button google"><i class="fab fa-google"></i>  Login with Google</button>
+                <button onclick="loginWithFacebook()" class="social-login-button facebook"><i class="fab fa-facebook"></i>   Login with Facebook</button>
+                <button onclick="loginWithGitHub()" class="social-login-button github"><i class="fab fa-github"></i>    Login with GitHub</button>
+            </div>
+            <div class="container2">
+                <div class="or-text">OR</div>
+                <div class="vertical-line"></div>
+            </div>
+            <div class="container3">
+                <form id="loginForm" action="home.html">
+                    <div class="input-icon">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="username" name="username" placeholder="Username" autofocus required>
+                    </div>
+                    <div class="input-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                    </div>
+                    <a href="home.html"><button type="submit" onclick="validateLoginForm()"  >Login</button></a>
+                     <a href="forgot-password.html" style="margin:50px;">Forgot Password</a>
+                </form>
+            </div>
+        </div>
+        <footer class="footerbox">
+            <p>Don't have an account? <a href="register.html">Register here</a></p>
+        </footer>
+    </div>  
+    <script>
+        function loginWithGoogle() {
+            var clientId = 'YOUR_GOOGLE_CLIENT_ID';
+            var redirectUri = 'home.html';
+            var scope = 'email profile openid';
+            var url = 'https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?access_type=online&client_id=1089506319528-1fl1067cvvu5l27t0itbjqbuvimmbu3t.apps.googleusercontent.com&prompt&redirect_uri=https%3A%2F%2Fcodepen.io%2Fauth%2Fgoogle_oauth2%2Fcallback&response_type=code&scope=email%20profile&state=5871333ff8291224fddc0358d6fefc8a3596be577a58244d&service=lso&o2v=1&ddm=0&flowName=GeneralOAuthFlow' + clientId + '&redirect_uri=' + redirectUri + '&scope=' + scope;
+            window.location.href = url;
+        }
+        function loginWithFacebook() {
+            var appId = 'YOUR_FACEBOOK_APP_ID';
+            var redirectUri = 'home.html';
+            var url = 'https://www.facebook.com/login.php?skip_api_login=1&api_key=3612805092269329&kid_directed_site=0&app_id=3612805092269329&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv5.0%2Fdialog%2Foauth%3Fauth_type%3Drerequest%26client_id%3D3612805092269329%26redirect_uri%3Dhttps%253A%252F%252Fcodepen.io%252Fauth%252Ffacebook%252Fcallback%26response_type%3Dcode%26scope%3Demail%26state%3Da293175344eecbec3b3a4af3121594a3fd4609a6d690d136%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D244e3711-938e-423e-a6a9-3e9e16c1e2a8%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fcodepen.io%2Fauth%2Ffacebook%2Fcallback%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3Da293175344eecbec3b3a4af3121594a3fd4609a6d690d136%23_%3D_&display=page&locale=en_GB&pl_dbl=0' + appId + '&redirect_uri=' + redirectUri + '&scope=email';
+            window.location.href = url;
+        }
+        function loginWithGitHub() {
+            var clientId = 'YOUR_GITHUB_CLIENT_ID';
+            var redirectUri = 'home.html';
+            var scope = 'user';
+            var url = 'https://github.com/login/oauth/authorize?' +
+            'client_id=YOUR_GITHUB_CLIENT_ID' +
+            '&redirect_uri=YOUR_REDIRECT_URI' +
+            '&scope=user:email' + clientId + '&redirect_uri=' + redirectUri + '&scope=' + scope;
+            window.location.href = url;
+        }
+        function validateLoginForm() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            if (username.trim() === '') {
+                alert('Please enter your username.');
+                return false;
+            }
+            if (password.trim() === '') {
+                alert('Please enter your password.');
+                return false;
+            }
+            if (password.length < 6) {
+                alert('Password must be at least 6 characters long.');
+                return false;
+            }
+            // window.location.href = 'home.html';
+            return true;
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            if (!validateLoginForm()) {
+                event.preventDefault();
+            }
+        });
+    </script>
+    
+</body>
+</html>

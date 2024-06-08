@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KourseKraze-Registration</title>
+    <link rel="icon" type="image/x-icon" href="images/xing.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            background-image: url("images/pintrest6.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;  
+            background-size: cover;
+            
+        }
+        header {
+            padding: 10px;
+        }
+        .topnav {
+                position: relative;
+                overflow: hidden;
+                display: flex; 
+                justify-content: space-between;
+                align-items: center; 
+                padding: 10px;
+        }
+
+         .topnav img {
+                width: 25px;
+                height: 25px;
+                margin-left: 10px;
+        }
+
+        .topnav h1 {
+                font-family: Georgia, serif;
+                font-size: x-large;
+                margin: 0;
+                color: #fff;
+        }
+
+        .topnav-centered {
+                display: flex;
+                flex: 1; 
+                justify-content: center;
+        }
+        .topnav-centered a {
+                padding: 10px 20px;
+                text-decoration: none;
+                font-size: 17px;
+        }
+
+        .topnav-right {
+                margin-left: auto; 
+        }
+        .topnav a {
+        float: left;
+        color: #ffffff;
+        text-align: center;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 17px;
+        }
+        .topnav a:hover {
+            background-color:#105555;
+            color: rgb(255, 255, 255);
+            border-radius: 8px;
+        }
+
+        .topnav a.active {
+        background-color: #105555;
+        color: white;
+        border-radius: 8px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.3);
+            color: #1812c1;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        button {
+            background-color: #105555;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #1812c1;
+        }
+
+        p {
+            margin-top: 20px;
+            color: #fff;
+        }
+        @media  screen and (max-width :700px) {
+        body {
+          background-image: url(images/pintrest1.jpg);
+        }
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="topnav">
+            <span> <img src="images/xing.png" alt="Icon"></span> <span><h1>KourseKraze</h1></span> 
+            <div class="topnav-centered">
+            <a href="course.html">Courses</a>
+            <a href="contact.html">Contact</a>
+            <a href="home.html" >Home</a>
+            <a href="about.html">About</a>
+            <a href="login.html">Login</a>
+            <a href="register.html" class="active">Registration</a>
+            </div>
+            <div class="topnav-right">
+            <a href="home.html">Logout</a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <h2>Register</h2>
+        <form id="registerForm" action="login.html" onsubmit="return validateForm()">
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+    <script>
+        function validateForm() {
+            var username = document.getElementById('username').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var password = document.getElementById('password').value.trim();
+            var confirmPassword = document.getElementById('confirmPassword').value.trim();
+            if (isEmpty(username)) {
+                alert('Username is required!');
+                return false;
+            }
+            if (isEmpty(email)) {
+                alert('Email is required!');
+                return false;
+            }
+            if (!validateEmail(email)) {
+                alert('Please enter a valid email address!');
+                return false;
+            }
+            if (isEmpty(password)) {
+                alert('Password is required!');
+                return false;
+            }
+            if (isEmpty(confirmPassword)) {
+                alert('Please confirm your password!');
+                return false;
+            }
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return false;
+            }
+            // window.location.href = 'login.html';
+            return true;
+        }
+
+        function isEmpty(str) {
+            return !str || str.trim().length === 0;
+        }
+
+        function validateEmail(email) {
+            var re = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+            return re.test(email);
+        }
+    </script>
+</body>
+</html>
