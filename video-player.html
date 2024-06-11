@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KourseKast-Video player</title>
+    <link rel="icon" type="image/x-icon" href="images/xing.png">
+    <style>
+        .myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            background-attachment: fixed;
+            background-position: cover;
+        }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 9999;
+            padding: 10px;
+            cursor: pointer;
+            color: rgb(255, 255, 255);
+            background-color: #105555;
+            border-radius: 5px;
+        }
+        .back-button:hover {
+            background-color: #002f3f;
+            color: rgb(255, 255, 255);
+        }
+        .fullscreen-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 9999;
+            padding: 10px;
+            cursor: pointer;
+            color: rgb(255, 255, 255);
+            background-color: #105555;
+            border-radius: 5px;
+        }
+        .fullscreen-button:hover {
+            background-color: #002f3f;
+            color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body>
+    <video id="videoPlayer" controls class="myVideo">
+        <source src="images/title-artist.mp4" type="video/mp4">
+        <source src="images/title-artist.ogg" type="video/ogg">
+        Your browser does not support the video tag.
+    </video>
+    <div id="backButton" class="back-button" onclick="goToHomePage()">
+        Back
+    </div>
+    <div id="fullscreenButton" class="fullscreen-button" onclick="toggleFullScreen()">
+        Fullscreen
+    </div>
+
+    <script>
+        function goToHomePage() {
+            window.location.href = "home.html"; 
+        }
+
+        function toggleFullScreen() {
+            const video = document.getElementById("videoPlayer");
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.mozRequestFullScreen) { 
+                video.mozRequestFullScreen();
+            } else if (video.webkitRequestFullscreen) { 
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) { 
+                video.msRequestFullscreen();
+            }
+        }
+
+        const video = document.getElementById("videoPlayer");
+
+        video.addEventListener("ended", function() {
+            window.location.href = "home.html";
+        });
+    </script>
+</body>
+</html>

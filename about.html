@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KourseKraze - About Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="images/xing.png">
+    <style>
+      body {
+        margin: 0;
+        background-image: url(images/image2.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;  
+        background-size: cover;
+        color: rgb(255, 255, 255);
+        justify-content: center;
+        align-items: center; 
+      }
+      header {
+        padding: 10px;
+      }
+      .main{
+        position: relative;
+        align-items: center; 
+        margin: 0 auto;
+        padding: 50px;
+        max-width: 1000px;
+        justify-content: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      }
+      .topnav {
+        position: relative;
+        overflow: hidden;
+        display: flex; 
+        justify-content: space-between;
+        align-items: center; 
+        padding: 10px;
+        color: rgb(255, 255, 255);
+      }
+      .topnav img {
+        width: 25px;
+        height: 25px;
+        margin-left: 10px;
+      }
+      .topnav h1 {
+        font-family: Georgia, serif;
+        font-size: x-large;
+        margin: 0;
+      }
+      .topnav-centered {
+        display: flex;
+        flex: 1; 
+        justify-content: center;
+      }
+      .topnav-centered a {
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      .topnav-right {
+        margin-left: auto; 
+      }
+      .topnav a {
+        float: left;
+        color: #fffefe;
+        text-align: center;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      .topnav a:hover {
+        background-color:#105555;
+        color: rgb(255, 255, 255);
+        border-radius: 8px;
+      }
+      .topnav a.active {
+        background-color: #105555;
+        color: white;
+        border-radius: 8px;
+      }
+      .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        border-radius: 8px;
+        padding-top: 60px;
+      }
+      .sidebar a {
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+      .sidebar a:hover {
+        background-color:#105555;
+        color: rgb(255, 255, 255);
+        border-radius: 8px;
+          }
+      .sidebar img {
+        width: 25px;
+        height: 25px;
+        margin-left: 10px;
+          }
+      .sidebar h1 {
+        font-family: Georgia, serif;
+        font-size: x-large;
+        margin: 0;
+        color: rgb(255, 255, 255);
+      }
+      .sidebar .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+          }
+      .openbtn {
+          font-size: 20px;
+          cursor: pointer;
+          background-color: #111;
+          color: white;
+          padding: 10px 15px;
+          border: none;
+          border-radius: 8px;
+          }
+      .openbtn:hover {
+          background-color: #368f7a;
+          }
+      .main {
+          transition: margin-right .5s;
+          padding: 16px;
+          }
+      @media screen and (max-height: 450px) {
+          .sidebar {padding-top: 15px;}
+          .sidebar a {font-size: 18px;}
+          }
+      @media screen and (min-width: 900px) {
+          .sidebar {
+              display: none;
+          }
+          .openbtn {
+              display: none;
+          }
+      }
+          
+      @media screen and (max-width: 900px) {
+          .topnav-centered, .topnav-right ,.topnav img ,h2{
+              display: none;
+          }
+          .topnav.responsive .topnav-centered, 
+          .topnav.responsive .topnav-right {
+              display: block;
+          }
+          
+      }
+
+      @media screen and (max-width: 570px) {
+          .topnav a:not(:first-child) {display: none;}
+          .topnav a.icon {
+              float: right;
+              display: block;
+              }
+          }
+      @media screen and (max-width: 570px) {
+          .topnav.responsive {position: relative;}
+          .topnav.responsive .icon {
+              position: absolute;
+              right: 0;
+              top: 0;
+          }
+          .topnav.responsive a {
+              float: none;
+              display: block;
+              text-align: left;
+          }
+      }
+      @media  screen and (max-width :700px) {
+        body {
+          background-image: url(images/pintrest1.jpg);
+        }
+      }
+      @media screen and (max-width: 600px) {
+        .topnav a, .topnav-right {
+          float: none;
+          display: block;
+        }
+        .topnav-centered {
+          position: relative;
+          top: 0;
+          left: 0;
+          transform: none;
+          text-align: center;
+        }
+        .topnav-centered a {
+          margin: 10px 0;
+        }
+      }
+      span, h1 {
+        display: inline;
+      }
+      h2,h3 ,h4{
+        float: center;
+        color: #35cc41;
+        text-align: center;
+        text-decoration: none;
+        font-size: 17px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topnav">
+      <span> <img src="images/xing.png" alt="Icon"></span> <span><h2 style="color: rgb(254, 254, 255);font-family: Georgia, serif;font-size: x-large;">KourseKraze</h2></span> 
+      <div class="topnav-centered">
+        <a href="course.html">Courses</a>
+        <a href="contact.html">Contact</a>
+        <a href="dummyhome.html">Home</a>
+        <a href="about.html" class="active">About</a>
+      </div>
+      <div class="topnav-right">
+        <a href="home.html">Logout</a>
+      </div>
+      <button class="openbtn" onclick="openNav()">☰ Menu</button>  
+      <div id="mySidebar" class="sidebar">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+          <span><img src="images/xing.png" alt="Icon"></span><span><h1>KourseKraze</h1></span> 
+          <a href="course.html">course</a>
+          <a href="home.html">Home</a>
+          <a href="contact.html">Contact</a>
+          <a href="about.html">About</a>
+      </div>
+    </div>
+    <div style="padding-left:16px" class="main">
+      <h2>About Us</h2>
+      <div>
+        <h3>Our Mission</h3>
+        <p>At KourseKraze, our mission is to make high-quality education accessible to everyone. We believe in empowering individuals through learning and providing a platform where they can discover their passions and achieve their goals.</p>
+      </div>
+      <div>
+        <h3>Our Vision</h3>
+        <p>We envision a world where education knows no boundaries. Through innovative technology and a diverse range of courses, we aim to create a global community of lifelong learners who are equipped with the knowledge and skills to thrive in the ever-changing world.</p>
+      </div>
+      <div>
+        <h3>Founder</h3>
+        <div>
+          <img src="founder.jpg" alt="Founder Image" style="width: 200px; height: 200px; border-radius: 50%;">
+        </div>
+        <div>
+          <h4>Buttula Karthik</h4>
+          <p>Buttula Karthik, the visionary behind KourseKraze, is a passionate advocate for education. With a background in technology and a deep understanding of the importance of lifelong learning, Karthik embarked on a mission to revolutionize online education.</p>
+          <p>Driven by the belief that education is the key to personal and professional growth, Karthik founded KourseKraze with the aim of democratizing access to knowledge and empowering individuals to realize their full potential.</p>
+        </div>
+      </div>
+      <div>
+        <h3>Our Team</h3>
+        <p>Our team consists of dedicated professionals from diverse backgrounds, united by a common passion for education. From content creators and instructors to developers and support staff, each member plays a vital role in ensuring the success of KourseKraze.</p>
+        <p>We are committed to fostering a culture of collaboration, innovation, and continuous improvement. Together, we strive to deliver an exceptional learning experience to our students and empower them to achieve their goals.</p>
+      </div>
+      <div>
+        <h3>Join Us</h3>
+        <p>Are you passionate about education and technology? Do you want to make a difference in the lives of learners around the world? Join us on our mission to transform education and empower individuals to reach their full potential.</p>
+        <p>Check out our current job openings and become a part of the KourseKraze team today!</p>
+      </div>
+    </div>
+    <script>
+      function openNav() {
+        document.getElementById("mySidebar").style.width = "220px";
+        document.querySelector(".main").style.marginRight = "220px";
+      }
+
+      function closeNav() {
+          document.getElementById("mySidebar").style.width = "0";
+          document.querySelector(".main").style.marginRight= "0";
+      }
+  </script>
+  </body>
+</html>

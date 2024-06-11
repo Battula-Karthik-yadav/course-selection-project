@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>KourseKraze-Data-Science</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="images/xing.png">
+        <style>
+            * {
+             box-sizing: border-box;
+            }
+            body {
+                background-color: #198289;
+                font-family: Helvetica, sans-serif;
+                margin: 0;
+            }
+            .header {
+                max-width: 400px;
+                padding: 20px;
+                border-radius: 10px;
+                margin: 0 auto;
+                text-align: center;
+                color: #ffffff;
+                position: relative; 
+                z-index: 1;
+                font-size: 25px; 
+                z-index: -1;
+            }
+            .header img {
+                width: 40px; 
+                height: 40px;
+                margin :0 ;
+            }
+            .header h1 {
+                font-family: Georgia, serif;
+                font-size: 30px; 
+                margin-bottom: 30px;
+                color: #ffffff;
+            }
+            .timeline {
+                position: relative;
+                max-width: 1300px;
+                margin: 50px auto;
+            }
+            .timeline::after {
+                content: '';
+                position: absolute;
+                width: 4px;
+                background-color: rgb(0, 0, 0);
+                top: 0;
+                bottom: 0;
+                left: 50%;
+                margin-left: -2px;
+                z-index: -1;
+            }
+            .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: transparent;
+            z-index: -2;
+            background-image: radial-gradient(circle at 50% 0%, transparent 12px, rgb(36, 120, 102) 13px);
+            }
+            .container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            }
+            .container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: white;
+            border: 4px solid #FF9F55;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            }
+            .left {
+            left: 0;
+            }
+            .right {
+            left: 50%;
+            }
+            .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+            }
+            .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+            }
+            .right::after {
+            left: -16px;
+            }
+            .content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            }
+            .video-container {
+            padding: 20px;
+            color: #ffeeee;
+            }
+            .sidebar {
+            height: 100%;
+            width: o;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            border-radius: 8px;
+            }
+            .sidebar a {
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+            }
+            .sidebar a:hover {
+                background-color:#105555;
+                color: rgb(255, 255, 255);
+                border-radius: 8px;
+            }
+            .sidebar img {
+                width: 25px;
+                height: 25px;
+                margin-left: 10px;
+            }
+            .sidebar h1 {
+                font-family: Georgia, serif;
+                font-size: x-large;
+                margin: 0;
+                color: rgb(255, 255, 255);
+                    }
+            span ,h1 {
+                        display: inline;
+                    }
+            .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+            }
+            .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #105555;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            }
+            .openbtn:hover {
+            background-color: #002929;
+            color: aliceblue;
+            }
+            #main {
+            transition: margin-left .5s;
+            padding: 16px;
+            }
+            @media screen and (max-width: 600px) {
+                .container3 {
+                    font-size: 30px; 
+                    margin: 0 auto 20px; 
+                }
+            }
+            @media screen and (max-height: 450px) {
+                .sidebar {padding-top: 15px;}
+                .sidebar a {font-size: 18px;}
+            }
+            button {
+                background-color:rgb(8, 35, 132);
+                color:rgb(255, 255, 255);
+                padding: 10px 20px;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+            }
+            button:hover {
+                background-color: #00035b;
+                color: #ffffff;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <span> <img src="images/xing.png" alt="Icon"></span> <span><h1>KourseKraze</h1></span> 
+            <a href="course.html">course</a>
+            <a href="dummyhome.html">Home</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About</a>
+        </div>
+        <button class="openbtn" onclick="openNav()">☰ Menu</button>  
+        <div id="main">
+            <div class="header">
+                <span> <img src="images/xing.png" alt="Icon"></span> <span><h1>KourseKraze</h1></span> 
+                <p>Data Science Roadmap</p>
+            </div>
+            <div class="timeline">
+                <div class="container left">
+                    <div class="video-container">
+                        <h2>Data Science Roadmap</h2>
+                        <p>Watch this YouTube video to learn about the data science roadmap for beginners.</p>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/PFPt6PQNslE?si=tiBNp_UNMEDIf40B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="container right">
+                    <div class="video-container">
+                        <h2>Python Full Tutorial</h2>
+                        <p>Watch this YouTube video to learn about Python Full Tutorial for Data Science.</p>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/_uQrJ0TkZlc?si=HdGNUtV94eW24X--" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="container left">
+                    <div class="video-container">
+                        <h2>Sql Full Tutorial</h2>
+                        <p>Watch this YouTube video to learn about Sql Full Tutorial for Data Science.</p>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/q_JsgpiuY98?si=8BtyziKwIMQ7kDxK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="container right">
+                    <div class="video-container">
+                        <h2>Statistic</h2>
+                        <p>Watch this YouTube video to learn about Statistic for data science .</p>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/LZzq1zSL1bs?si=UqP7hAYPOpcEX4rf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="container left">
+                    <div class="video-container">
+                        <h2>proability</h2>
+                        <p>Watch this YouTube video to learn about Proability Full Tutorial for Data Science.</p>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/uzkc-qNVoOk?si=icjMQUuUVzEUUaRE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="container right">
+                    <div class="video-container">
+                        <h2>Data Vsualization</h2>
+                        <p>Watch this YouTube video to learn about data visualization for data science .</p>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Wh4sCCZjOwo?si=SeJQpWo9A--xIg41" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="container left">
+                    <div class="video-container">
+                        <h2>Data Manipulation</h2>
+                        <p>Watch this YouTube video to learn about Proability Full Tutorial for Data Science.</p>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/yIJrCFXs0rU?si=LpZljBE6u_zzl7YR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="container right">
+                    <div class="video-container">
+                        <h2>Data Analyst</h2>
+                        <p>To learn about Data Analyst then click belove button and start Data Analyst full Course.</p>
+                        <form>
+                            <button type="button" onclick="location.href ='dataanalyst.html'" style="margin-left: 60px;">Learn</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="container left">
+                    <div class="video-container">
+                        <h2>Machain Learning</h2>
+                        <p>To learn about Machine Learning then click belove button and start Machine Learnig full Course.</p>
+                        <form>
+                            <button type="button" onclick="location.href ='machinelearnig.html'" style="margin-left: 60px;">Learn</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="container right">
+                    <div class="video-container">
+                        <h2>Deep Learning</h2>
+                        <p>To learn about Machine Learning then click belove button and start Machine Learnig full Course.</p>
+                        <form>
+                            <button type="button" onclick="location.href ='deeplearnig.html'" style="margin-left: 60px;">Learn</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function openNav() {
+            document.getElementById("mySidebar").style.width = "220px";
+            document.getElementById("main").style.marginLeft = "220px";
+            }
+
+            function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+            }
+            document.addEventListener('DOMContentLoaded', function() {
+            var videos = document.querySelectorAll('iframe');
+            var index = 0;
+
+            function onPlayerStateChange(event) {
+                if (event.data === 0) {
+                index++;
+                if (index < videos.length) {
+                    videos[index].src += '&autoplay=1';
+                }
+                }
+            }
+
+            for (var i = 0; i < videos.length; i++) {
+                var player;
+                player = new YT.Player(videos[i], {
+                events: {
+                    'onStateChange': onPlayerStateChange
+                }
+                });
+            }
+            });
+        </script>
+
+    </body>
+</html>

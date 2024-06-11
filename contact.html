@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KourseKast-Contact Us</title>
+    <link rel="icon" type="image/x-icon" href="images/xing.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("images/image.jpg");
+            margin: 0;
+            padding: 0;
+            background-repeat: no-repeat;
+            background-attachment: fixed;  
+            background-size: cover;
+
+        }
+
+        header {
+            padding: 10px;
+        }
+        .topnav {
+                position: relative;
+                overflow: hidden;
+                display: flex; 
+                justify-content: space-between;
+                align-items: center; 
+                padding: 10px;
+        }
+
+         .topnav img {
+                width: 25px;
+                height: 25px;
+                margin-left: 10px;
+        }
+
+        .topnav h1 {
+                font-family: Georgia, serif;
+                font-size: x-large;
+                margin: 0;
+                color: #fff;
+        }
+
+        .topnav-centered {
+                display: flex;
+                flex: 1; 
+                justify-content: center;
+        }
+        .topnav-centered a {
+                padding: 10px 20px;
+                text-decoration: none;
+                font-size: 17px;
+        }
+
+        .topnav-right {
+                margin-left: auto; 
+        }
+        .topnav a {
+        float: left;
+        color: #ffffff;
+        text-align: center;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 17px;
+        }
+        .topnav a:hover {
+            background-color:#105555;
+            color: rgb(255, 255, 255);
+            border-radius: 8px;
+        }
+
+        .topnav a.active {
+        background-color: #105555;
+        color: white;
+        border-radius: 8px;
+        }
+        .container {
+            text-align: center;
+            justify-content: center;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color:rgba(0, 0, 0, 0.5);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #fff;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        button {
+            background-color: #105555;
+            color: #fff;
+            width: 100%;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="topnav">
+            <span> <img src="images/xing.png" alt="Icon"></span> <span><h1>KourseKraze</h1></span> 
+            <div class="topnav-centered">
+            <a href="course.html">Courses</a>
+            <a href="contact.html"class="active">Contact</a>
+            <a href="dummyhome.html" >Home</a>
+            <a href="about.html">About</a>
+            </div>
+            <div class="topnav-right">
+            <a href="home.html">Logout</a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
